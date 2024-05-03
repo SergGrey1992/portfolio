@@ -14,6 +14,8 @@ export const NextFeatures = ({}: Props) => {
                 <li className={styles.item}>contact section</li>
                 <li className={styles.item}>education section</li>
                 <li className={styles.item}>not-found page</li>
+                <li className={styles.item}>CV</li>
+                <li className={styles.item}>completion all projects info</li>
             </ul>
         </div>
     )
