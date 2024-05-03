@@ -1,0 +1,22 @@
+.container {
+    color: var(--color)
+}
+
+.name {
+    padding: 0 0 0 60px;
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+.right {
+    padding-right: 50px;
+}
+
+.feature {
+    border-right: 3px solid currentColor;
+    border-bottom: 3px solid currentColor;
+}

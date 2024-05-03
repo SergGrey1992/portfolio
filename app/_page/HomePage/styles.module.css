@@ -1,0 +1,81 @@
+.perspective {
+    perspective: 100vw;
+    position: relative;
+    width: 100%;
+    margin: 0 0 30vh 0;
+}
+
+.projects {
+    position: relative;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    text-align: right;
+    width: 95%;
+    transform-style: preserve-3d;
+}
+
+.linkProject {
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+.content {
+    transform: rotateY(-25deg) translateZ(0) scale(1);
+    transform-origin: right center;
+    transform-style: preserve-3d;
+    will-change: transform;
+    padding: 0;
+    transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1), padding 0.5s ease-in-out;
+    color: var(--color);
+}
+
+.linkText {
+    position: relative;
+    text-transform: uppercase;
+    transition: color 0.2s ease-in-out;
+
+    line-height: 1;
+    font-size: 9vw;
+    font-weight: 900;
+    @supports (-webkit-text-stroke: 2px var(--color)) {
+        -webkit-text-stroke: 2px var(--color);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0.23em;
+        left: -0.3em;
+        width: 2px;
+        height: 0.85em;
+        background-color: var(--color);
+        transform: rotate(25deg);
+        pointer-events: none;
+    }
+    &:before {
+        content: attr(data-info);
+        white-space: pre;
+        position: absolute;
+        top: 3.7em;
+        left: -250px;
+        width: 200px;
+        text-align: right;
+        font-size: 0.7vw;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1em;
+        color: var(--color) !important;
+        pointer-events: none;
+        transition: none;
+    }
+}
+
+.linkProject:hover .content {
+    transform: rotateY(-15deg);
+    /*padding: 25px 0;*/
+}
+
+.linkProject:hover .content .linkText {
+    color: transparent;
+}

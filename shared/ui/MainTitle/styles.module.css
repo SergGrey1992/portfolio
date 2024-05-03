@@ -1,0 +1,19 @@
+.title {
+    /*padding: 0 50px 5vh 60px;*/
+    margin-top: 55px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    font-size: 8.5vw;
+    font-weight: 900;
+    line-height: .7;
+    position: relative;
+    width: fit-content;
+
+    @supports (-webkit-text-stroke: 4px var(--color)) {
+        -webkit-text-stroke: 4px var(--color);
+        color: transparent;
+    }
+}

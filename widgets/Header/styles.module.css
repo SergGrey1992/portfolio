@@ -1,0 +1,44 @@
+.header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    z-index: 20;
+    color: currentColor;
+    background-image: radial-gradient(
+            rgba(0, 0, 0, 0) 1px,
+            var(--bgr) 1px
+    );
+    background-size: 4px 4px;
+    backdrop-filter: blur(3px);
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100vw;
+    padding: 5vh 60px 5vh;
+    transition: opacity 0.2s ease-in-out;
+    font-size: 10px;
+}
+
+.left {
+    display: flex;
+}
+
+.contact {
+    display: flex;
+    gap: 30px;
+}
+
+.right {
+    position: relative;
+    display: flex;
+    width: 30%;
+    max-width: 250px;
+    justify-content: space-between;
+}

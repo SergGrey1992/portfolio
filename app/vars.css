@@ -1,0 +1,32 @@
+:root {
+    --accent-light: #fff;
+    --accent-dark: #000;
+    --accent-ultra: #4801ff;
+}
+
+html[data-theme='light'] {
+    color-scheme: light;
+
+    --color: var(--accent-dark);
+    --color-inver: var(--accent-dark);
+    --color-secondary: var(--accent-dark);
+    --bgr: var(--accent-light);
+}
+
+html[data-theme='dark'] {
+    color-scheme: dark;
+
+    --color: var(--accent-light);
+    --color-inver: var(--accent-dark);
+    --color-secondary: var(--accent-light);
+    --bgr: var(--accent-dark);
+}
+
+html[data-theme='ultra'] {
+    color-scheme: dark;
+
+    --color: var(--accent-dark);
+    --color-inver: var(--accent-light);
+    --color-secondary: var(--accent-light);
+    --bgr: var(--accent-ultra);
+}

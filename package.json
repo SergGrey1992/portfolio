@@ -1,26 +1,42 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
-  }
+    "name": "portfolio",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "format": "prettier --check .",
+        "format:fix": "prettier --write --ignore-path .gitignore ."
+    },
+    "dependencies": {
+        "@formatjs/intl-localematcher": "^0.5.4",
+        "gsap": "^3.12.5",
+        "i18next": "^23.11.3",
+        "i18next-resources-to-backend": "^1.2.1",
+        "i18nexus-cli": "^3.4.0",
+        "negotiator": "^0.6.3",
+        "next": "14.2.3",
+        "next-i18n-router": "^5.4.2",
+        "react": "^18",
+        "react-dom": "^18",
+        "react-i18next": "^14.1.1",
+        "react-type-animation": "^3.2.0",
+        "tua-body-scroll-lock": "^1.5.0"
+    },
+    "devDependencies": {
+        "@svgr/webpack": "^8.1.0",
+        "@types/negotiator": "^0.6.3",
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "eslint": "^8",
+        "eslint-config-next": "14.2.3",
+        "eslint-config-prettier": "^9.1.0",
+        "postcss": "^8",
+        "prettier": "^3.2.5",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5"
+    }
 }

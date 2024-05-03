@@ -1,0 +1,25 @@
+.logo {
+    position: absolute;
+    bottom: calc(7.5vh + 67px);
+    left: 60px;
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    transition: all 0.2s ease-in-out;
+    @media (hover: hover) {
+        &:hover {
+            color: transparent;
+        }
+
+        @supports (-webkit-text-stroke: 2px var(--color-secondary)) {
+            -webkit-text-stroke: 2px var(--color-secondary);
+        }
+    }
+}
+
+.topMode {
+    transform: translate3d(0, calc(-87.5vh + 211px), 0)
+}
