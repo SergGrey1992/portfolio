@@ -1,0 +1,11 @@
+.content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 100;
+}
+
+.item {
+    font-size: 10px;
+}

@@ -1,10 +1,6 @@
 import { HomePage } from '@/app/_page/HomePage/HomePage'
 
-type Props = {
-    children: React.ReactNode
-}
-
-export default async function Page({}: Readonly<Props>) {
+export default async function Page() {
     return (
         <main>
             <HomePage />

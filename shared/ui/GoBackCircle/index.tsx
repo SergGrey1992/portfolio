@@ -4,7 +4,6 @@ import React from 'react'
 import styles from './styles.module.css'
 import { Icon } from '@/shared/ui/Icons/index'
 import { TransitionLink } from '@/shared/ui/TransitionLink'
-import Link from 'next/link'
 
 interface Props {}
 
