@@ -15,7 +15,9 @@ export const PageTransitionEffect = ({
     return (
         <>
             <div id={'element'} className={'transition-element'} />
-            <div id={'page'}>{children}</div>
+            <div id={'page'} className={'page'}>
+                {children}
+            </div>
         </>
     )
 }

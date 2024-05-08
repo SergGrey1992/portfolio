@@ -14,9 +14,16 @@ export const GoBackCircle = ({}: Props) => {
                 <TransitionLink href={'/'} className={styles.link}>
                     <Icon as={'arrowLeft'} width={'50%'} height={'50%'} />
                 </TransitionLink>
-                <div className={styles.backContainer}>
-                    <div className={styles.back}>Go Back?</div>
-                </div>
+                <TransitionLink href={'/'} className={styles.link}>
+                    <Icon as={'arrowLeft'} width={'50%'} height={'50%'} />
+                </TransitionLink>
+                <TransitionLink href={'/'} className={styles.link}>
+                    <Icon as={'arrowLeft'} width={'50%'} height={'50%'} />
+                </TransitionLink>
+
+                {/*<div className={styles.backContainer}>*/}
+                {/*    <div className={styles.back}>Go Back?</div>*/}
+                {/*</div>*/}
             </div>
         </>
     )

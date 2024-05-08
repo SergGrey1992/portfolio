@@ -12,8 +12,8 @@
     position: relative;
     width: fit-content;
 
-    @supports (-webkit-text-stroke: 4px var(--color)) {
-        -webkit-text-stroke: 4px var(--color);
-        color: transparent;
-    }
+    /*@supports (-webkit-text-stroke: 4px var(--color)) {*/
+    /*    -webkit-text-stroke: 4px var(--color);*/
+    /*    color: transparent;*/
+    /*}*/
 }

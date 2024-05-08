@@ -20,6 +20,7 @@ export const Logo = ({ myName }: Props) => {
             className={classNames(cls.logo, {
                 [cls.topMode]: !(pathname === '/'),
             })}
+            id={'logo'}
         >
             {myName.split(' ').map((char, index) => {
                 return <span key={`chat.${char}.${index}`}>{char}</span>

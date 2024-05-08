@@ -1,0 +1,14 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--bgr);
+    color: var(--color-secondary);
+    z-index: 5;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-50px);
+}
+
+.modeGoBack {
+    transform: translateY(0);
+}

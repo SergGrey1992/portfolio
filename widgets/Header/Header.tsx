@@ -60,7 +60,6 @@ export const Header = ({ myName }: Props) => {
                             </li>
                         </ul>
                     </nav>
-                    <ColorMode />
                 </div>
             </div>
         </header>

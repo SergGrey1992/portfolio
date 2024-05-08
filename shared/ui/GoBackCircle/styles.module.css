@@ -1,13 +1,11 @@
 .btn {
     position: fixed;
-    right: 0;
+    left: 0;
     top: 0;
-    width: 50px;
-    height: 50px;
     background-color: var(--bgr);
-    color: var(--color);
-    border-bottom: 2px solid currentColor;
-    border-left: 2px solid currentColor;
+    color: var(--color-inver);
+    /*border-bottom: 2px solid currentColor;*/
+    /*border-right: 2px solid currentColor;*/
     cursor: pointer;
     z-index: 10;
 }
@@ -16,7 +14,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    width: 50px;
+    height: 50px;
 }
 
 .backContainer {

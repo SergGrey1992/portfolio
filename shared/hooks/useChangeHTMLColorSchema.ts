@@ -8,6 +8,7 @@ export enum ColorModeEnum {
     light = 'light',
     dark = 'dark',
     ultra = 'ultra',
+    pink = 'pink',
 }
 
 export const useChangeHTMLColorSchema = (): UseChangeHTMLColorSchema => {

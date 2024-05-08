@@ -1,21 +1,20 @@
 import React from 'react'
 import type { ProjectType } from '@/shared/config/structures/common'
 import { MainTitle } from '@/shared/ui/MainTitle'
-import { GoBackCircle } from '@/shared/ui/GoBackCircle'
 import styles from './styles.module.css'
 import { classNames } from '@/lib/utils/classNames'
-import { Tag } from '@/shared/ui/Tag/index'
-import { NextProject } from '@/features/NextProject/index'
+import { Tag } from '@/shared/ui/Tag'
+import { NextProject } from '@/features/NextProject'
 
 interface Props {
     project: ProjectType
-    nextProject: ProjectType
+    nextProject?: ProjectType
 }
 
 export const Project = ({ project, nextProject }: Props) => {
+    console.log('project.support', project.support)
     return (
         <>
-            <GoBackCircle />
             <section
                 className={classNames('w-full flex gap-5', {}, [
                     styles.container,
@@ -41,9 +40,17 @@ export const Project = ({ project, nextProject }: Props) => {
                         <div className={'flex flex-col'}>
                             <span className={'text-xl'}>site:</span>
                             <span className={'text-xs'}>
-                                {project.private
-                                    ? 'this private project'
-                                    : 'site'}
+                                {project.private ? (
+                                    'this private project'
+                                ) : (
+                                    <a
+                                        href={project.site}
+                                        target={'_blank'}
+                                        rel={'noreferrer'}
+                                    >
+                                        view link
+                                    </a>
+                                )}
                             </span>
                         </div>
                         <div className={'flex flex-col'}>
@@ -62,7 +69,7 @@ export const Project = ({ project, nextProject }: Props) => {
                     <div className={'flex flex-col gap-4'}>
                         <div className={'flex flex-col gap-5'}>
                             <span className={'text-xl'}>technology:</span>
-                            <ul className={'flex gap-10'}>
+                            <ul className={'flex gap-10 flex-wrap'}>
                                 {project.technologies.titles.map((f, index) => {
                                     return (
                                         <Tag key={`Feature.${index}`}>
@@ -72,7 +79,11 @@ export const Project = ({ project, nextProject }: Props) => {
                                 })}
                             </ul>
                             <div>
-                                <span className={'text-xl'}>peculiarity:</span>
+                                {project.technologies.description && (
+                                    <span className={'text-xl'}>
+                                        peculiarity:
+                                    </span>
+                                )}
                                 <p>{project.technologies.description}</p>
                             </div>
                         </div>
@@ -107,10 +118,19 @@ export const Project = ({ project, nextProject }: Props) => {
                     </div>
                 </div>
             </section>
-            <NextProject
-                title={nextProject.titleSettings.title}
-                href={nextProject.titleSettings.href}
-            />
+            {project.support && (
+                <>
+                    {project.support.map((pr, index) => (
+                        <Project key={`SupportProject.${index}`} project={pr} />
+                    ))}
+                </>
+            )}
+            {nextProject && (
+                <NextProject
+                    title={nextProject.titleSettings.title}
+                    href={nextProject.titleSettings.href}
+                />
+            )}
         </>
     )
 }

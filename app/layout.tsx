@@ -11,6 +11,7 @@ import { Header } from '@/widgets/Header/Header'
 
 import './index.css'
 import { NextFeatures } from '@/widgets/NextFeatures/index'
+import { Sidebar } from '@/widgets/Sidebar/index'
 
 // const myFont = localFont({
 //     src: '../shared/config/fonts/DrukWideBold.ttf',
@@ -35,11 +36,10 @@ type Props = {
 //https://vanholtz.co/
 export default async function RootLayout({ children }: Readonly<Props>) {
     return (
-        <html lang={'en'} data-theme={'ultra'}>
-            <body
-                className={`${myFont.className} body h-screen flex flex-col bg-accent`}
-            >
+        <html lang={'en'} data-theme={'pink'}>
+            <body className={`${myFont.className} body h-screen flex flex-col`}>
                 <NextFeatures />
+                <Sidebar />
                 <Header myName={'Sergey Tsviatkou'} />
                 {children}
             </body>
