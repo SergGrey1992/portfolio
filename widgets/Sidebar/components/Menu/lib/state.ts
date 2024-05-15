@@ -1,11 +1,18 @@
 import { create } from 'zustand'
 
 type MenuState = {
-    isOpen: boolean
+    isOpen: boolean | undefined
     toggleOpen: (isOpen: boolean) => void
+    activeIndex: number
+    setActiveIndex: (index: number) => void
 }
 
 export const useMenu = create<MenuState>((set) => ({
-    isOpen: false,
-    toggleOpen: (isOpen) => set({ isOpen }),
+    isOpen: undefined,
+    toggleOpen: (isOpen) =>
+        set({ isOpen: isOpen === undefined ? true : isOpen }),
+    activeIndex: -1,
+    setActiveIndex: (index) => {
+        set({ activeIndex: index })
+    },
 }))

@@ -5,6 +5,7 @@ import styles from './styles.module.css'
 import { classNames } from '@/lib/utils/classNames'
 import { Tag } from '@/shared/ui/Tag'
 import { NextProject } from '@/features/NextProject'
+import { AnimationsFeatures } from '@/features/AnimationsFeatures/index'
 
 interface Props {
     project: ProjectType
@@ -92,30 +93,31 @@ export const Project = ({ project, nextProject }: Props) => {
                         <h2 className={'text-xl'}>description:</h2>
                         <p className={'text-balance'}>{project.description}</p>
                     </div>
-                    <div>
-                        <h3 className={'text-xl'}>features:</h3>
-                        <ul className={'grid grid-cols-3 gap-5'}>
-                            {project.features.map((f, index) => {
-                                return (
-                                    <li
-                                        key={`Feature.${index}`}
-                                        className={classNames('p-4', {}, [
-                                            styles.feature,
-                                        ])}
-                                    >
-                                        <span
-                                            className={'text-4xl text-center'}
-                                        >
-                                            {f.title}
-                                        </span>
-                                        <div>
-                                            <span>{f.description}</span>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
+                    <AnimationsFeatures features={project.features} />
+                    {/*<div>*/}
+                    {/*    <h3 className={'text-xl'}>features:</h3>*/}
+                    {/*    <ul className={'grid grid-cols-3'}>*/}
+                    {/*        {project.features.map((f, index) => {*/}
+                    {/*            return (*/}
+                    {/*                <li*/}
+                    {/*                    key={`Feature.${index}`}*/}
+                    {/*                    className={classNames('p-4', {}, [*/}
+                    {/*                        styles.feature,*/}
+                    {/*                    ])}*/}
+                    {/*                >*/}
+                    {/*                    <span*/}
+                    {/*                        className={'text-4xl text-center'}*/}
+                    {/*                    >*/}
+                    {/*                        {f.title}*/}
+                    {/*                    </span>*/}
+                    {/*                    <div>*/}
+                    {/*                        <span>{f.description}</span>*/}
+                    {/*                    </div>*/}
+                    {/*                </li>*/}
+                    {/*            )*/}
+                    {/*        })}*/}
+                    {/*    </ul>*/}
+                    {/*</div>*/}
                 </div>
             </section>
             {project.support && (

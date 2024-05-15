@@ -18,7 +18,7 @@ export const Logo = ({ myName }: Props) => {
         <TransitionLink
             href={'/'}
             className={classNames(cls.logo, {
-                [cls.topMode]: !(pathname === '/'),
+                //[cls.topMode]: !(pathname === '/'),
             })}
             id={'logo'}
         >

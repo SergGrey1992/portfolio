@@ -1,5 +1,4 @@
 .content {
-    /*border-bottom: 2px solid currentColor;*/
     border-right: 2px solid currentColor;
     width: 50px;
     height: 50px;
@@ -7,7 +6,9 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 10;
+    z-index: 500;
+    background: var(--bgr);
+    cursor: pointer;
 }
 
 .menuBurger {
@@ -16,6 +17,9 @@
     display: block;
     background-color: currentColor;
     position: relative;
+
+    transition:
+            background-color 0.1s ease-in-out;
 }
 
 .menuBurger:after, .menuBurger:before {
@@ -24,6 +28,10 @@
     width: 100%;
     height: 2px;
     display: block;
+    transition:
+            top 0.3s ease-in-out 0.1s,
+            bottom 0.3s ease-in-out 0.1s,
+            transform 0.3s ease-in-out 0.1s;
 }
 
 .menuBurger:after {
@@ -38,35 +46,68 @@
     background-color: currentColor;
 }
 
+.menuBurger[data-active="true"] {
+    background-color: var(--bgr);
+}
+
+.menuBurger[data-active="true"]:after {
+    /*background-color: red;*/
+    top: 0;
+    transform: rotate(-45deg);
+}
+.menuBurger[data-active="true"]:before {
+    /*background-color: red;*/
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
 .menuContent {
     position: absolute;
     left: 0;
     top: -2px;
+    z-index: 100;
     padding-left: 74px;
     padding-top: 124px;
-    width: calc(100vw / 2 - 50px);
-    height: calc(100vh * 0.7);
+    width: calc(100vw * 0.3 - 50px);
+    height: calc(100vh * 1);
     border-top: 2px solid currentColor;
-    /*max-height: 100px;*/
-    /*min-height: 100px;*/
     border-bottom: 2px solid currentColor;
     background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, var(--bgr) 1px);
     background-size: 4px 4px;
     backdrop-filter: blur(3px);
+    /*transform: translateX(-100%);*/
 }
 
 .list {
-    /*padding: 0 38px;*/
     display: flex;
     flex-direction: column;
     gap: 24px;
-    /*align-items: center;*/
     height: 100%;
-    transform-style: preserve-3d;
-    transform-origin: left center;
-    text-transform: uppercase;
+    perspective: 100vw;
+    perspective-origin: 0;
 }
 
 .item {
     font-size: 40px;
+    font-weight: 700;
+    width: fit-content;
+    transform-style: preserve-3d;
+    transform-origin: left top;
+    text-transform: uppercase;
+    transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1), color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    transform: rotateY(30deg) translateZ(0);
+    @supports (-webkit-text-stroke: 1px var(--color)) {
+        -webkit-text-stroke: 1px var(--color);
+    }
 }
+
+.item:hover {
+    transform: rotateY(15deg) translateZ(0);
+    color: transparent;
+}
+
+.active {
+    transform: rotateY(0deg)!important;
+}
+

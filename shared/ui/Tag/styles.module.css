@@ -9,3 +9,19 @@
         /*-webkit-text-stroke: 2px var(--color);*/
     }
 }
+
+.hoveredTag {
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color);
+            color: var(--bgr);
+        }
+    }
+}
+
+.activeTag {
+    background-color: var(--color);
+    color: var(--bgr);
+}

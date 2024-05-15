@@ -1,0 +1,17 @@
+.content {
+    display: flex;
+    padding: 24px 0 24px 0;
+
+}
+
+.wrapper {
+    perspective: 100vw;
+}
+
+.text {
+    text-wrap: balance;
+    font-size: 1.5vw;
+    font-weight: 500;
+    /*transform-origin: right center;*/
+    /*transform: rotateY(-45deg) translateZ(0);*/
+}

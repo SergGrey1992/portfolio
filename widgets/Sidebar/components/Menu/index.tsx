@@ -5,18 +5,28 @@ import gsap from 'gsap'
 
 import styles from './styles.module.css'
 import { useMenu } from '@/widgets/Sidebar/components/Menu/lib/state'
+import { TransitionLink } from '@/shared/ui/TransitionLink/index'
+import { classNames } from '@/lib/utils/classNames'
 
 interface Props {}
+
+const items = ['about', 'contact', 'education']
 
 export const Menu = ({}: Props) => {
     const isOpen = useMenu((state) => state.isOpen)
     const toggleOpen = useMenu((state) => state.toggleOpen)
+    const activeIndex = useMenu((state) => state.activeIndex)
+    const setActiveIndex = useMenu((state) => state.setActiveIndex)
 
     const menuRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         let ctx = gsap.context(() => {
             const body = document.getElementById('page')
+            if (isOpen === undefined) {
+                gsap.set(menuRef.current, { xPercent: -100 })
+                return
+            }
             if (body) {
                 const tl = gsap.timeline().progress(1)
                 tl.set(body, {
@@ -57,13 +67,30 @@ export const Menu = ({}: Props) => {
             }}
         >
             <div className={styles.content} onClick={() => toggleOpen(!isOpen)}>
-                <span className={styles.menuBurger} />
+                <span
+                    className={classNames(styles.menuBurger, {
+                        [styles.active]: true,
+                    })}
+                    data-active={isOpen}
+                />
             </div>
             <menu className={styles.menuContent} ref={menuRef}>
                 <ul className={styles.list}>
-                    <li className={styles.item}>about</li>
-                    <li className={styles.item}>contact</li>
-                    <li className={styles.item}>education</li>
+                    {items.map((item, i) => {
+                        return (
+                            <TransitionLink
+                                key={`Link.${i}`}
+                                href={`/${item}`}
+                                className={classNames(styles.item, {
+                                    [styles.active]: activeIndex === i,
+                                })}
+                                delay={500}
+                                onClick={() => setActiveIndex(i)}
+                            >
+                                <span>{item}</span>
+                            </TransitionLink>
+                        )
+                    })}
                 </ul>
             </menu>
         </div>

@@ -26,7 +26,7 @@
     transform-style: preserve-3d;
     will-change: transform;
     padding: 0;
-    transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1), padding 0.5s ease-in-out;
+    transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.3s ease-in-out;
     color: var(--color);
 }
 
@@ -73,7 +73,14 @@
 
 .linkProject:hover .content {
     transform: rotateY(-15deg);
-    /*padding: 25px 0;*/
+}
+
+.active .content {
+    transform: rotateY(0deg)!important;
+}
+
+.withActive .linkProject:not(.active) .content {
+    opacity: 0;
 }
 
 .linkProject:hover .content .linkText {

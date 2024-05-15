@@ -12,6 +12,7 @@ import { Header } from '@/widgets/Header/Header'
 import './index.css'
 import { NextFeatures } from '@/widgets/NextFeatures/index'
 import { Sidebar } from '@/widgets/Sidebar/index'
+import { ClosedMenu } from '@/features/ClosedMenu/index'
 
 // const myFont = localFont({
 //     src: '../shared/config/fonts/DrukWideBold.ttf',
@@ -38,7 +39,8 @@ export default async function RootLayout({ children }: Readonly<Props>) {
     return (
         <html lang={'en'} data-theme={'pink'}>
             <body className={`${myFont.className} body h-screen flex flex-col`}>
-                <NextFeatures />
+                {/*<NextFeatures />*/}
+                <ClosedMenu />
                 <Sidebar />
                 <Header myName={'Sergey Tsviatkou'} />
                 {children}

@@ -5,6 +5,11 @@ export enum TitleVariant {
     multiple = 'multiple',
 }
 
+export type Feature = {
+    title: string
+    description: string
+}
+
 export type ProjectType = {
     titleSettings: {
         title: string
@@ -15,10 +20,7 @@ export type ProjectType = {
     private?: boolean
     site?: string
     description: string
-    features: {
-        title: string
-        description: string
-    }[]
+    features: Feature[]
     technologies: {
         titles: { name: string; icon?: IconName }[]
         description?: string
