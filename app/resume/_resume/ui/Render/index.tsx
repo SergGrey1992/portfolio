@@ -1,7 +1,24 @@
 'use client'
 
 import React, { useState } from 'react'
-import { PDFDownloadLink, PDFViewer, StyleSheet } from '@react-pdf/renderer'
+import dynamic from 'next/dynamic'
+import { StyleSheet } from '@react-pdf/renderer'
+
+const PDFDownloadLink = dynamic(
+    () => import('@react-pdf/renderer').then((mod) => mod.PDFDownloadLink),
+    {
+        ssr: false,
+        loading: () => <p>Loading...</p>,
+    }
+)
+
+const PDFViewer = dynamic(
+    () => import('@react-pdf/renderer').then((mod) => mod.PDFViewer),
+    {
+        ssr: false,
+        loading: () => <p>Loading...</p>,
+    }
+)
 
 import { Icon } from '@/shared/ui/Icons'
 
@@ -42,7 +59,6 @@ export const Render = () => {
                     </button>
                 </div>
                 <button className={cls.download}>
-                    {/*<Icon as={'download'} width={15} height={15} />*/}
                     <PDFDownloadLink
                         document={activePDF === 'cv' ? <CV /> : <Work />}
                         fileName={`${activePDF === 'cv' ? 'CV' : 'WORK'}_Segrey_Tsviatkou.pdf`}
