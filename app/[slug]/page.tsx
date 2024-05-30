@@ -1,5 +1,5 @@
 import React from 'react'
-import { PROJECTS } from '@/shared/config/structures/common'
+import { PROJECTS } from '@/shared/config/structures/projects'
 import { notFound } from 'next/navigation'
 import { Project } from '@/app/[slug]/_page/Project'
 

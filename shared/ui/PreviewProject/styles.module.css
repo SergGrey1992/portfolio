@@ -1,0 +1,19 @@
+.content {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-bottom: 1px solid var(--color);
+}
+
+.image {
+    object-fit: contain;
+}
+
+.video {
+    object-fit: contain;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}

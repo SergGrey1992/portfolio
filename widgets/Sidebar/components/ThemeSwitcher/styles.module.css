@@ -1,9 +1,10 @@
 .content {
+    position: fixed;
+    bottom: 0;
     width: 50px;
     height: 50px;
     display: flex;
     flex-direction: column;
-    position: relative;
     z-index: 5000;
 }
 

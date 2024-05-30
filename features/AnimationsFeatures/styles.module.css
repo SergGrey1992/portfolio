@@ -1,3 +1,23 @@
+.container {
+    padding: 0 0 0 50px;
+}
+
+.titleBox {
+    border-bottom: 1px solid var(--color);
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.iconBox {
+    margin: 0 15px;
+}
+
 .content {
     display: flex;
     padding: 24px 0 24px 0;
@@ -5,7 +25,7 @@
 }
 
 .wrapper {
-    perspective: 100vw;
+    /*perspective: 100vw;*/
 }
 
 .text {

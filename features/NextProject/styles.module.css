@@ -1,27 +1,24 @@
 .container {
-    padding: 150px 50px 0 0;
+    padding: 150px 50px 0 75px;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    perspective: 100vw;
+    /*align-items: flex-end;*/
+    border-top: 1px solid var(--color);
 }
 
 .nextTitle {
-    font-size: 32px;
+    font-size: 15px;
 }
 
 .link {
     display: block;
-    text-align: right;
     text-transform: uppercase;
-    font-weight: 900;
-    font-size: 9vw;
+    font-weight: 700;
+    font-size: 100px;
     letter-spacing: .02em;
     line-height: .9em;
-    transition: color .2s ease-in-out, transform .5s;
-    transform: rotateY(-45deg) translateZ(0);
-    transform-origin: right center;
+    transition: color .2s ease-in-out;
     cursor: pointer;
     @media (hover: hover) {
         @supports (-webkit-text-stroke: 2px var(--color-secondary)) {
@@ -31,6 +28,5 @@
 }
 
 .container .link:hover {
-    transform: rotateY(0deg);
     color: transparent;
 }

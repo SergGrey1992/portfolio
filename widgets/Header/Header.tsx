@@ -12,7 +12,7 @@ interface Props {
 export const Header = ({ myName }: Props) => {
     return (
         <header className={cls.header}>
-            <Logo myName={myName} />
+            {/*<Logo myName={myName} />*/}
             {/*<button>123</button>*/}
             <div className={cls.info}>
                 <div className={cls.left}>

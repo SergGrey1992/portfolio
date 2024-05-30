@@ -1,0 +1,35 @@
+.section {
+    overflow: hidden;
+    position: relative;
+    border-style: solid;
+    border-color: var(--color);
+}
+
+.top {
+    border-top: 2px;
+}
+.left {
+    border-left: 2px;
+}
+.right {
+    border-right: 2px;
+}
+.bottom {
+    border-bottom: 2px;
+}
+
+.overlay {
+    position: absolute;
+    display: block;
+    z-index: 1000;
+    inset: 0;
+    background-color: var(--color);
+    border-style: solid;
+    border-color: var(--color);
+
+    transition: transform 1s ease-in-out;
+}
+
+.hidden {
+    transform: translateY(100%);
+}

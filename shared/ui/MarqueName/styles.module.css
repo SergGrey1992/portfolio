@@ -1,0 +1,10 @@
+.marque {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, var(--bgr) 1px);
+    background-size: 4px 4px;
+    backdrop-filter: blur(3px);
+    overflow: hidden;
+}

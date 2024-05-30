@@ -4,9 +4,10 @@ import React, { useState } from 'react'
 import type { PropsWithChildren } from 'react'
 
 import cls from './styles.module.css'
-import { PROJECTS } from '@/shared/config/structures/common'
+import { PROJECTS } from '@/shared/config/structures/projects'
 import { TransitionLink } from '@/shared/ui/TransitionLink'
 import { classNames } from '@/lib/utils/classNames'
+import { AnimationSection } from '@/shared/ui/AnimationSection/index'
 
 interface HomePagePropsType {}
 
@@ -27,7 +28,7 @@ export const HomePage = ({}: PropsWithChildren<HomePagePropsType>) => {
                                 [cls.active]: active === i,
                             })}
                         >
-                            <div className={cls.content}>
+                            <AnimationSection className={cls.content}>
                                 <TransitionLink
                                     className={cls.linkText}
                                     href={pr.titleSettings.href}
@@ -37,7 +38,7 @@ export const HomePage = ({}: PropsWithChildren<HomePagePropsType>) => {
                                 >
                                     {pr.titleSettings.title}
                                 </TransitionLink>
-                            </div>
+                            </AnimationSection>
                         </li>
                     )
                 })}

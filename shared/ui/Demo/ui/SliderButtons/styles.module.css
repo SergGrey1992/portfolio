@@ -1,0 +1,21 @@
+.content {
+    display: flex;
+    height: calc(100vh - 50px);
+    padding: 0 0 0 50px;
+}
+
+.action {
+    width: 5%;
+    border-bottom: 1px solid var(--color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actionL {
+    border-right: 1px solid var(--color);
+}
+
+.actionR {
+    border-left: 1px solid var(--color);
+}

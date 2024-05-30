@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    -webkit-font-smoothing: antialiased;
+}
+
 .body {
     background-color: var(--bgr);
     transition: background-color 0.2s ease-in-out;

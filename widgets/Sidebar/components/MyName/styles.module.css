@@ -1,0 +1,22 @@
+.content {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.inner {
+    width: fit-content;
+    display: flex;
+    flex: auto;
+    border-bottom: 1px solid var(--color);
+}
+
+.name {
+    font-size:25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-right: 25px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}

@@ -1,0 +1,24 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.fit {
+    min-height: initial;
+}
+
+.titleBlock {
+    /*position: sticky;*/
+    /*top: 51px;*/
+    /*z-index: 100;*/
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, var(--bgr) 1px);
+    background-size: 4px 4px;
+    backdrop-filter: blur(3px);
+}
+
+
+.content {
+    display: flex;
+    height: 100%;
+}

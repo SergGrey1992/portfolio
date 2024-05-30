@@ -1,7 +1,8 @@
 import React from 'react'
+import { ContactPage } from '@/app/contact/_contact/index'
 
 const Page = () => {
-    return <div>CONTACT</div>
+    return <ContactPage />
 }
 
 export default Page

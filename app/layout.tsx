@@ -1,18 +1,10 @@
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
-import {
-    Space_Grotesk,
-    Bebas_Neue,
-    Prompt,
-    Geologica,
-    Mitr,
-} from 'next/font/google'
-import { Header } from '@/widgets/Header/Header'
+import { Prompt } from 'next/font/google'
 
 import './index.css'
-import { NextFeatures } from '@/widgets/NextFeatures/index'
 import { Sidebar } from '@/widgets/Sidebar/index'
-import { ClosedMenu } from '@/features/ClosedMenu/index'
+import { MenuList } from '@/widgets/Sidebar/components/MenuList/index'
+import { MarqueName } from '@/shared/ui/MarqueName/index'
 
 // const myFont = localFont({
 //     src: '../shared/config/fonts/DrukWideBold.ttf',
@@ -33,16 +25,14 @@ export const metadata: Metadata = {
 type Props = {
     children: React.ReactNode
 }
-//https://www.awwwards.com/directory/freelance/
-//https://vanholtz.co/
+//support projects
 export default async function RootLayout({ children }: Readonly<Props>) {
     return (
-        <html lang={'en'} data-theme={'pink'}>
-            <body className={`${myFont.className} body h-screen flex flex-col`}>
-                {/*<NextFeatures />*/}
-                <ClosedMenu />
+        <html lang={'en'} data-theme={'dark'}>
+            <body className={`${myFont.className} body flex flex-col`}>
+                <MarqueName />
                 <Sidebar />
-                <Header myName={'Sergey Tsviatkou'} />
+                <MenuList />
                 {children}
             </body>
         </html>

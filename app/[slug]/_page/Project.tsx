@@ -1,11 +1,21 @@
-import React from 'react'
-import type { ProjectType } from '@/shared/config/structures/common'
+import React, { useMemo } from 'react'
+import type { ProjectType } from '@/shared/config/structures/projects'
 import { MainTitle } from '@/shared/ui/MainTitle'
 import styles from './styles.module.css'
 import { classNames } from '@/lib/utils/classNames'
 import { Tag } from '@/shared/ui/Tag'
 import { NextProject } from '@/features/NextProject'
 import { AnimationsFeatures } from '@/features/AnimationsFeatures/index'
+import Marquee from 'react-fast-marquee'
+import { AnimationSection } from '@/shared/ui/AnimationSection/index'
+import { WorkTime } from '@/shared/ui/WorkTime/index'
+import Image from 'next/image'
+import { fillEmptyItems } from '@/shared/lib/fillEmptyItems'
+import { Icon } from '@/shared/ui/Icons/index'
+import { PreviewProject } from '@/shared/ui/PreviewProject/index'
+import { Demo } from '@/shared/ui/Demo/index'
+import { StickySection } from '@/widgets/StickySection/index'
+import { Spacing } from '@/shared/ui/Spacing/index'
 
 interface Props {
     project: ProjectType
@@ -13,112 +23,71 @@ interface Props {
 }
 
 export const Project = ({ project, nextProject }: Props) => {
-    console.log('project.support', project.support)
+    const features = useMemo(
+        () =>
+            fillEmptyItems(project.features, 6, () => ({
+                title: '',
+                description: '',
+            })),
+        [project.features]
+    )
     return (
         <>
-            <section
-                className={classNames('w-full flex gap-5', {}, [
-                    styles.container,
-                ])}
-            >
-                <div className={styles.name}>
-                    {'Sergey Tsviatkou'.split(' ').map((char, index) => {
-                        return <span key={`Char.${char}.${index}`}>{char}</span>
-                    })}
-                </div>
-                <div
-                    className={classNames(
-                        'flex flex-col justify-end gap-10',
-                        {},
-                        [styles.right]
-                    )}
+            <section className={styles.container}>
+                <WorkTime year={project.titleSettings.year} />
+                <StickySection
+                    sectionName={project.titleSettings.title}
+                    isPrivate={project.privateAccess.private}
+                    site={project.privateAccess.site}
                 >
-                    <MainTitle
-                        title={project.titleSettings.title}
-                        isPrivate={project.private ?? false}
-                    />
-                    <div className={'flex gap-10'}>
-                        <div className={'flex flex-col'}>
-                            <span className={'text-xl'}>site:</span>
-                            <span className={'text-xs'}>
-                                {project.private ? (
-                                    'this private project'
-                                ) : (
-                                    <a
-                                        href={project.site}
-                                        target={'_blank'}
-                                        rel={'noreferrer'}
-                                    >
-                                        view link
-                                    </a>
-                                )}
-                            </span>
-                        </div>
-                        <div className={'flex flex-col'}>
-                            <span className={'text-xl'}>start work:</span>
-                            <span className={'text-xs'}>
-                                {project.titleSettings.year[0]}
-                            </span>
-                        </div>
-                        <div className={'flex flex-col'}>
-                            <span className={'text-xl'}>end work:</span>
-                            <span className={'text-xs'}>
-                                {project.titleSettings.year[1]}
-                            </span>
-                        </div>
-                    </div>
-                    <div className={'flex flex-col gap-4'}>
-                        <div className={'flex flex-col gap-5'}>
-                            <span className={'text-xl'}>technology:</span>
-                            <ul className={'flex gap-10 flex-wrap'}>
-                                {project.technologies.titles.map((f, index) => {
-                                    return (
-                                        <Tag key={`Feature.${index}`}>
-                                            {f.name}
-                                        </Tag>
-                                    )
-                                })}
-                            </ul>
-                            <div>
-                                {project.technologies.description && (
-                                    <span className={'text-xl'}>
-                                        peculiarity:
+                    <PreviewProject preview={project.preview} />
+                </StickySection>
+                <div className={styles.description}>
+                    <div className={styles.left}>
+                        <AnimationSection className={styles.titleAboutBox}>
+                            <Marquee autoFill speed={30}>
+                                <h3 className={styles.titleAbout}>
+                                    About
+                                    <span className={styles.iconAboutBox}>
+                                        <Icon
+                                            as={'starline'}
+                                            height={25}
+                                            width={25}
+                                        />
                                     </span>
-                                )}
-                                <p>{project.technologies.description}</p>
-                            </div>
-                        </div>
+                                </h3>
+                            </Marquee>
+                        </AnimationSection>
+                        <AnimationSection className={styles.fullEmpty} />
                     </div>
-                    <div>
-                        <h2 className={'text-xl'}>description:</h2>
-                        <p className={'text-balance'}>{project.description}</p>
+                    <div className={styles.right}>
+                        <AnimationSection className={styles.descriptionRight}>
+                            <p className={styles.text}>{project.description}</p>
+                        </AnimationSection>
+                        {project.technologies.description && (
+                            <AnimationSection className={''}>
+                                <p
+                                    className={styles.text}
+                                    style={{ marginTop: 25 }}
+                                >
+                                    {project.technologies.description}
+                                </p>
+                            </AnimationSection>
+                        )}
+                        <AnimationSection className={styles.fullEmpty} />
                     </div>
-                    <AnimationsFeatures features={project.features} />
-                    {/*<div>*/}
-                    {/*    <h3 className={'text-xl'}>features:</h3>*/}
-                    {/*    <ul className={'grid grid-cols-3'}>*/}
-                    {/*        {project.features.map((f, index) => {*/}
-                    {/*            return (*/}
-                    {/*                <li*/}
-                    {/*                    key={`Feature.${index}`}*/}
-                    {/*                    className={classNames('p-4', {}, [*/}
-                    {/*                        styles.feature,*/}
-                    {/*                    ])}*/}
-                    {/*                >*/}
-                    {/*                    <span*/}
-                    {/*                        className={'text-4xl text-center'}*/}
-                    {/*                    >*/}
-                    {/*                        {f.title}*/}
-                    {/*                    </span>*/}
-                    {/*                    <div>*/}
-                    {/*                        <span>{f.description}</span>*/}
-                    {/*                    </div>*/}
-                    {/*                </li>*/}
-                    {/*            )*/}
-                    {/*        })}*/}
-                    {/*    </ul>*/}
-                    {/*</div>*/}
                 </div>
+                {project.demo && (
+                    <>
+                        <StickySection sectionName={'demo'}>
+                            <Demo data={project.demo} />
+                        </StickySection>
+                        <Spacing height={250} />
+                    </>
+                )}
+                <StickySection sectionName={'features'}>
+                    <AnimationsFeatures features={features} />
+                </StickySection>
             </section>
             {project.support && (
                 <>

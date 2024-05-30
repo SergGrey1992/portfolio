@@ -1,0 +1,76 @@
+.container {
+    height: 100%;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color);
+}
+
+.action {
+    display: flex;
+    height: 50px;
+}
+
+.chose {
+    border-right: 1px solid var(--color);
+    padding: 0 15px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.btn {
+    border-right: 1px solid var(--color);
+    padding: 0 15px;
+    text-transform: uppercase;
+    display: block;
+    transition:
+            opacity 0.3s ease-in-out,
+            background-color 0.3s ease-in-out,
+            color 0.3s ease-in-out;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color);
+            color: var(--bgr);
+            opacity: 0.8;
+        }
+    }
+}
+
+.download {
+    border-left: 1px solid var(--color);
+    padding: 0 15px;
+
+    transition:
+            background-color 0.3s ease-in-out,
+            color 0.3s ease-in-out;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color) !important;
+            color: var(--bgr) !important;
+        }
+    }
+}
+
+.active {
+    background-color: var(--color) !important;
+    color: var(--bgr) !important;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color) !important;
+            color: var(--bgr) !important;
+            opacity: 1 !important;
+        }
+    }
+}
+
+.full {
+    height: 100%;
+}

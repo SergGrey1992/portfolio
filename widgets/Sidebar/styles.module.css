@@ -1,12 +1,16 @@
+.container {
+    padding: 0 0 0 50px;
+    width: 100%;
+}
+
 .sidebar {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: var(--bgr);
-    color: var(--color-secondary);
-    z-index: 5;
-    transition: transform 0.3s ease-in-out;
-    transform: translateY(-50px);
+    /*background-color: var(--bgr);*/
+    color: var(--color);
+    z-index: 1500;
+    height: 100%;
 }
 
 .modeGoBack {

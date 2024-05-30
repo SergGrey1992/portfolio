@@ -4,8 +4,8 @@
     top: 0;
     background-color: var(--bgr);
     color: var(--color-inver);
-    /*border-bottom: 2px solid currentColor;*/
-    /*border-right: 2px solid currentColor;*/
+    /*border-bottom: 1px solid currentColor;*/
+    /*border-right: 1px solid currentColor;*/
     cursor: pointer;
     z-index: 10;
 }
@@ -14,8 +14,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 2px solid currentColor;
-    border-right: 2px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    border-right: 1px solid currentColor;
     width: 50px;
     height: 50px;
 }
@@ -27,7 +27,7 @@
     width: calc(100% - 50px);
     height: 50px;
     color: var(--color);
-    border-bottom: 2px solid currentColor;
+    border-bottom: 1px solid currentColor;
     overflow: hidden;
 
     background-image: radial-gradient(
