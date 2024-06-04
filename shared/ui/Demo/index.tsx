@@ -25,13 +25,7 @@ export const Demo = ({ data }: Props) => {
                 <div className={styles.viewport} ref={emblaRef}>
                     <div className={styles.container}>
                         {data.map((pr, i) => (
-                            <div
-                                key={`Slide.${i}`}
-                                className={styles.slide}
-                                style={{
-                                    flex: `0 0 100%`,
-                                }}
-                            >
+                            <div key={`Slide.${i}`} className={styles.slide}>
                                 <PreviewProject preview={pr} />
                             </div>
                         ))}

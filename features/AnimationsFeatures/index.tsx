@@ -50,20 +50,22 @@ export const AnimationsFeatures = ({
     }
 
     return (
-        <div className={styles.container}>
-            <AnimationFeaturesList
-                features={features}
-                activeIndex={active}
-                changeActiveSection={changeActiveSection}
-            />
-            <div className={styles.content}>
-                <div className={styles.wrapper}>
-                    <p className={styles.text} ref={ref}>
-                        {features[active]?.description}
-                    </p>
-                </div>
+        <>
+            <div className={styles.container}>
+                <AnimationFeaturesList
+                    features={features}
+                    activeIndex={active}
+                    changeActiveSection={changeActiveSection}
+                />
+                <AnimationSection className={styles.content}>
+                    <div className={styles.wrapper}>
+                        <p className={styles.text} ref={ref}>
+                            {features[active]?.description}
+                        </p>
+                    </div>
+                </AnimationSection>
             </div>
-        </div>
-        // </div>
+            <AnimationSection className={styles.empty} />
+        </>
     )
 }

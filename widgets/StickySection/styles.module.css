@@ -2,6 +2,9 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    @media (width <= 767px) {
+        min-height: initial;
+    }
 }
 
 .fit {
@@ -9,9 +12,7 @@
 }
 
 .titleBlock {
-    /*position: sticky;*/
-    /*top: 51px;*/
-    /*z-index: 100;*/
+    height: 100%;
     background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, var(--bgr) 1px);
     background-size: 4px 4px;
     backdrop-filter: blur(3px);

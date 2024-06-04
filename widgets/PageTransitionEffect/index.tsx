@@ -23,7 +23,6 @@ export const PageTransitionEffect = ({
         }
         await wait(400)
         toggleAnimSectionOpen(true)
-        //animatePageIn()
     }
 
     useEffect(() => {
@@ -31,7 +30,6 @@ export const PageTransitionEffect = ({
     }, [pathname])
     return (
         <>
-            {/*<div id={'element'} className={'transition-element'} />*/}
             <div id={'page'} className={'page'}>
                 {children}
             </div>

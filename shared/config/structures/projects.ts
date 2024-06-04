@@ -347,37 +347,37 @@ export const PROJECTS: ProjectType[] = [
             ],
         },
     },
-    {
-        titleSettings: {
-            title: 'Dual Space',
-            year: ['feb - 2023', 'aug - 2023'],
-            href: '',
-            mode: TitleVariant.single,
-        },
-        privateAccess: {
-            private: true,
-            site: 'https://apps.apple.com',
-        },
-        description: '',
-        descriptionPDF:
-            'Mobile application for logging into different social networks and switching between accounts.',
-        roles: 'Mobile developer',
-        environment: [
-            'React',
-            'React-native',
-            'React-navigation',
-            'Reanimated 2',
-            'Async-storage',
-            'iap',
-            'i18n',
-            'redux-toolkit',
-            'svg',
-            'cookies',
-            'web view',
-        ],
-        technologies: { titles: [], description: '' },
-        features: [],
-    },
+    // {
+    //     titleSettings: {
+    //         title: 'Dual Space',
+    //         year: ['feb - 2023', 'aug - 2023'],
+    //         href: 'dual-space',
+    //         mode: TitleVariant.single,
+    //     },
+    //     privateAccess: {
+    //         private: false,
+    //         site: 'https://apps.apple.com/by/app/dual-space-parallel-accounts/id6446272131',
+    //     },
+    //     description: '',
+    //     descriptionPDF:
+    //         'Mobile application for logging into different social networks and switching between accounts.',
+    //     roles: 'Mobile developer',
+    //     environment: [
+    //         'React',
+    //         'React-native',
+    //         'React-navigation',
+    //         'Reanimated 2',
+    //         'Async-storage',
+    //         'iap',
+    //         'i18n',
+    //         'redux-toolkit',
+    //         'svg',
+    //         'cookies',
+    //         'web view',
+    //     ],
+    //     technologies: { titles: [], description: '' },
+    //     features: [],
+    // },
     {
         titleSettings: {
             title: 'react-native-qrcode-svg',

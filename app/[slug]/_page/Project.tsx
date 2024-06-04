@@ -25,7 +25,7 @@ interface Props {
 export const Project = ({ project, nextProject }: Props) => {
     const features = useMemo(
         () =>
-            fillEmptyItems(project.features, 6, () => ({
+            fillEmptyItems(project.features, 3, () => ({
                 title: '',
                 description: '',
             })),

@@ -21,7 +21,6 @@ type MenuItem = {
 
 const items: MenuItem[] = [
     { title: '', href: '/', icon: 'home' },
-    { title: 'about', href: '/about' },
     { title: 'contact', href: '/contact' },
     { title: 'education', href: '/education' },
     { title: 'resume', href: '/resume' },
@@ -49,16 +48,16 @@ export const MenuList = ({}: PropsWithChildren<IndexPropsType>) => {
                 tl.set(body, {
                     //scaleX: !isOpen ? 0.9 : 1,
                     opacity: !isOpen ? 0.4 : 1,
-                    yPercent: !isOpen ? 3 : 0,
+                    y: !isOpen ? 51 : 0,
                 })
-                tl.set(menuRef.current, { height: !isOpen ? 50 : 0 })
+                tl.set(menuRef.current, { height: !isOpen ? 'auto' : 0 })
 
                 tl.to(
                     body,
                     {
                         //scaleX: isOpen ? 0.9 : 1,
                         opacity: isOpen ? 0.4 : 1,
-                        yPercent: isOpen ? 3 : 0,
+                        y: isOpen ? 51 : 0,
                         duration: 0.6,
                         ease: 'power4.out',
                     },
@@ -66,7 +65,7 @@ export const MenuList = ({}: PropsWithChildren<IndexPropsType>) => {
                 ).to(
                     menuRef.current,
                     {
-                        height: isOpen ? 50 : 0,
+                        height: isOpen ? 'auto' : 0,
                         duration: 0.6,
                         ease: 'power4.out',
                     },
@@ -92,6 +91,7 @@ export const MenuList = ({}: PropsWithChildren<IndexPropsType>) => {
                                     ),
                                     [styles.hidden]:
                                         pathname === '/' && i === 0,
+                                    [styles.first]: pathname !== '/' && i === 0,
                                 })}
                                 delay={500}
                                 onClick={() => setActiveIndex(i)}

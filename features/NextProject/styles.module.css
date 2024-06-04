@@ -25,6 +25,9 @@
             -webkit-text-stroke: 2px var(--color-secondary);
         }
     }
+    @media (width <= 767px) {
+        font-size: 50px;
+    }
 }
 
 .container .link:hover {

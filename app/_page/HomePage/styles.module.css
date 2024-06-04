@@ -22,6 +22,9 @@
 .content {
     color: var(--color);
     padding: 15px 0 15px 25px;
+    @media (width <= 767px) {
+        padding: 10px;
+    }
 
 }
 
@@ -41,6 +44,14 @@
     @supports (-webkit-text-stroke: 2px var(--color)) {
         -webkit-text-stroke: 2px var(--color);
         paint-order: stroke fill;
+    }
+
+    @media (width <= 767px) {
+        font-size: 25px;
+        font-weight: 500;
+        @supports (-webkit-text-stroke: 1px var(--color)) {
+            -webkit-text-stroke: 1px var(--color);
+        }
     }
 
     /*&:after {*/

@@ -1,5 +1,7 @@
 .container {
     padding: 0 0 0 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 .titleBox {
@@ -21,17 +23,23 @@
 .content {
     display: flex;
     padding: 24px 0 24px 0;
-
 }
 
 .wrapper {
-    /*perspective: 100vw;*/
+    flex-grow: 1;
 }
 
 .text {
     text-wrap: balance;
-    font-size: 1.5vw;
+    font-size: 25px;
     font-weight: 500;
-    /*transform-origin: right center;*/
-    /*transform: rotateY(-45deg) translateZ(0);*/
+    padding: 0 0 0 25px;
+    @media (width <= 767px) {
+        font-size: 15px;
+    }
+}
+
+.empty {
+    height: 100%;
+    flex-grow: 1;
 }

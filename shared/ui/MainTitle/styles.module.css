@@ -1,5 +1,8 @@
 .private {
     margin: 0 25px;
+    @media (width <= 767px) {
+        margin: 0 10px;
+    }
 }
 
 .left {
@@ -13,6 +16,7 @@
 
 .title {
     width: 100%;
+    overflow: hidden;
     border-bottom: 1px solid var(--color);
 }
 
@@ -38,4 +42,8 @@
     position: relative;
     width: fit-content;
     text-transform: uppercase;
+    @media (width <= 767px) {
+        font-size: 50px;
+        font-weight: 500;
+    }
 }

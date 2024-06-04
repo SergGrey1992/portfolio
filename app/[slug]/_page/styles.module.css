@@ -51,19 +51,14 @@
     opacity: 0;
 }
 
-/*.right {*/
-/*    padding-right: 50px;*/
-/*}*/
-
-.feature {
-    /*border-right: 3px solid currentColor;*/
-    /*border-bottom: 1px solid currentColor;*/
-}
-
 .description {
     display: flex;
     width: 100%;
-    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
+    @media (width <= 767px) {
+       flex-direction: column;
+        min-height: initial;
+    }
 }
 
 .titleAboutBox {
@@ -73,9 +68,14 @@
 .titleAbout {
     text-transform: uppercase;
     font-weight: 700;
+    line-height: 1;
     font-size: 100px;
     display: flex;
     align-items: center;
+    @media (width <= 767px) {
+        font-size: 50px;
+        font-weight: 500;
+    }
 }
 
 .iconAboutBox {
@@ -89,26 +89,32 @@
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
+    @media (width <= 767px) {
+        width: 100%;
+        border-right: none;
+    }
 }
 
 .right {
     width: 50%;
     display: flex;
-
     flex-direction: column;
-    /*gap: 25px;*/
     border-bottom: 1px solid var(--color);
+    @media (width <= 767px) {
+        width: calc(100% - 50px);
+        /*border-bottom: none;*/
+        margin-left: 50px;
+    }
 }
 
 .descriptionRight {
     padding: 25px 0 0 0;
+    @media (width <= 767px) {
+        padding: 0;
+    }
 }
 
 .subTitle {
-    /*font-size: 25px;*/
-    /*text-transform: uppercase;*/
-    /*margin-bottom: 25px;*/
-    /*margin-top: 25px;*/
     display: block;
     opacity: 0.4;
     border-bottom: 1px solid var(--color);
@@ -116,11 +122,14 @@
 
 .text {
     white-space: pre-line;
-    padding: 0 25px 0 25px;
+    padding: 25px;
 }
 
 .fullEmpty {
     width: 100%;
     border-bottom: 1px solid var(--color);
     flex-grow: 1;
+    @media (width <= 767px) {
+        display: none;
+    }
 }

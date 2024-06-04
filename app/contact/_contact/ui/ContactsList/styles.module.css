@@ -3,6 +3,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
+    @media (width <= 767px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .item {

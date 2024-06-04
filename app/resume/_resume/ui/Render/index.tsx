@@ -63,7 +63,7 @@ export const Render = () => {
                         document={activePDF === 'cv' ? <CV /> : <Work />}
                         fileName={`${activePDF === 'cv' ? 'CV' : 'WORK'}_Segrey_Tsviatkou.pdf`}
                     >
-                        {({ blob, url, loading, error }) =>
+                        {({ loading }) =>
                             loading ? (
                                 <Icon as={'download'} width={15} height={15} />
                             ) : (
