@@ -5,7 +5,7 @@ import React from 'react'
 import styles from './styles.module.css'
 import { AnimationSection } from '@/shared/ui/AnimationSection/index'
 import { SubmitButton } from '@/app/contact/_contact/ui/Form/SubmitButton/index'
-import { useForm, FormProvider } from 'react-hook-form'
+import { useForm, FormProvider, SubmitHandler } from 'react-hook-form'
 
 interface Props {}
 
@@ -24,11 +24,19 @@ export const Form = ({}: Props) => {
         },
     })
 
-    const { register } = method
+    const { register, handleSubmit } = method
+
+    const onSubmit: SubmitHandler<FormState> = async (data) => {
+        console.log('data', data)
+        await fetch('/api/contact', {
+            method: 'POST',
+            body: JSON.stringify(data),
+        })
+    }
 
     return (
         <FormProvider {...method}>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.info}>
                     <AnimationSection className={styles.wrapper}>
                         <input
