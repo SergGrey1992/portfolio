@@ -32,7 +32,7 @@ export const MyName = ({}: PropsWithChildren<IndexPropsType>) => {
 
     return (
         <AnimationSection className={styles.inner}>
-            {[...Array(10)].map((_, i) => (
+            {[...Array(15)].map((_, i) => (
                 <div
                     className={`${styles.content} marquee-part`}
                     key={`Part.${i}`}

@@ -40,6 +40,7 @@
 
     text-transform: uppercase;
     border-right: 1px solid var(--color);
+    padding: 15px 0 15px 0;
     transition:
             color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
             background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
