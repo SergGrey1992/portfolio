@@ -67,6 +67,7 @@
 
 .titleAbout {
     text-transform: uppercase;
+    overflow: hidden;
     font-weight: 700;
     line-height: 1;
     font-size: 100px;
