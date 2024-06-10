@@ -42,7 +42,7 @@ export const CONTACTS: Contacts[] = [
     {
         id: '4',
         title: 'telegram',
-        link: 'https://t.me/@SergDia',
+        link: 'tg://@SerjDia',
         icon: 'telegram',
         variant: ContactVariant.link,
         name: '@SergDia',
