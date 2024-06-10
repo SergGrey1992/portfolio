@@ -15,6 +15,9 @@ import linkedin from './linkedin-box-line.svg'
 import home from './home-2-line.svg'
 import send from './mail-send-line.svg'
 import download from './download-2-line.svg'
+import refresh from './refresh-line.svg'
+import accept from './checkbox-circle-line.svg'
+import reject from './close-circle-line.svg'
 
 export const list = {
     arrowLeft,
@@ -34,6 +37,9 @@ export const list = {
     home,
     send,
     download,
+    refresh,
+    accept,
+    reject,
 }
 
 export type IconName = keyof typeof list

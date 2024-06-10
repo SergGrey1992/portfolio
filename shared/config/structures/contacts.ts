@@ -48,7 +48,7 @@ export const CONTACTS: Contacts[] = [
         name: '@SergDia',
     },
     {
-        id: '4',
+        id: '5',
         title: 'instagram',
         link: 'https://www.instagram.com/serg_tsviatkou',
         icon: 'instagram',

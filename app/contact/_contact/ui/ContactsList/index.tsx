@@ -36,6 +36,16 @@ export const ContactsList = ({}: PropsWithChildren<IndexPropsType>) => {
                 return (
                     <li key={`contact.${index}`}>
                         <AnimationSection className={styles.item}>
+                            <a
+                                href={
+                                    c.title === 'email'
+                                        ? `mailto:${c.link}`
+                                        : c.link
+                                }
+                                className={styles.link}
+                                rel='noopener noreferrer'
+                                target='_blank'
+                            />
                             <div className={styles.title}>
                                 <Icon as={c.icon} width={25} height={25} />
                                 <span>{c.title}</span>

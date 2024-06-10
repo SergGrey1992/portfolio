@@ -1,30 +1,33 @@
 'use client'
 
-import React, { useRef } from 'react'
 import type { PropsWithChildren } from 'react'
+import React, { useRef } from 'react'
 import { Icon } from '@/shared/ui/Icons/index'
-import { useFormContext, useWatch } from 'react-hook-form'
-import { FormState } from '@/app/contact/_contact/ui/Form/index'
+import { useFormContext } from 'react-hook-form'
+import { FormState, StatusForm } from '@/app/contact/_contact/ui/Form/index'
 
-interface IndexPropsType {}
+interface IndexPropsType {
+    status?: StatusForm
+}
 
-export const SubmitButton = ({}: PropsWithChildren<IndexPropsType>) => {
-    const { control } = useFormContext<FormState>()
+export const SubmitButton = ({ status }: PropsWithChildren<IndexPropsType>) => {
+    const {
+        formState: { isSubmitting, errors, submitCount },
+    } = useFormContext<FormState>()
 
     const justRef = useRef<HTMLAudioElement>(null)
     const noRef = useRef<HTMLAudioElement>(null)
 
-    const name = useWatch({ control, name: 'name' })
-    const email = useWatch({ control, name: 'email' })
-    const message = useWatch({ control, name: 'message' })
-
     const onMouseEnter = () => {
-        if (name === '' || email === '' || message === '') {
+        if (submitCount > 0) {
+            return
+        }
+        if (!!Object.keys(errors).length) {
             if (noRef.current) {
                 noRef.current.volume = 0.3
                 noRef.current.play()
-                return
             }
+            return
         }
         if (justRef.current) {
             justRef.current.volume = 0.3
@@ -34,8 +37,32 @@ export const SubmitButton = ({}: PropsWithChildren<IndexPropsType>) => {
 
     return (
         <>
-            <button type={'submit'} onMouseEnter={onMouseEnter}>
-                <Icon as={'send'} width={25} height={25} />
+            <button
+                type={'submit'}
+                onMouseEnter={onMouseEnter}
+                disabled={isSubmitting || !!status}
+            >
+                {status === undefined && (
+                    <>
+                        {!isSubmitting && (
+                            <Icon as={'send'} width={25} height={25} />
+                        )}
+                        {isSubmitting && (
+                            <Icon as={'refresh'} width={25} height={25} />
+                        )}
+                    </>
+                )}
+                {status === StatusForm.accepted && (
+                    <Icon
+                        as={'accept'}
+                        width={25}
+                        height={25}
+                        color={'green'}
+                    />
+                )}
+                {status === StatusForm.rejected && (
+                    <Icon as={'reject'} width={25} height={25} color={'red'} />
+                )}
             </button>
             <audio src='/audio/just_do_it.mp3' ref={justRef} />
             <audio src='/audio/noooo.mp3' ref={noRef} />

@@ -42,6 +42,7 @@
     color: var(--color);
     font-size: 25px;
     padding-left: 25px;
+    outline: none;
     &::placeholder {
         color: var(--color);
         font-size: 25px;
@@ -62,6 +63,7 @@
     resize: none;
     padding-left: 25px;
     min-height: 250px;
+    outline: none;
     &::placeholder {
         color: var(--color);
         font-size: 25px;
@@ -88,4 +90,25 @@
             justify-content: center;
         }
     }
+}
+
+
+.error {
+    & * {
+        color: red!important;
+    }
+
+    & > input {
+        color: red!important;
+        &::placeholder {
+            color: red!important;
+        }
+    }
+    & > textarea {
+        color: red!important;
+        &::placeholder {
+            color: red!important;
+        }
+    }
+
 }
