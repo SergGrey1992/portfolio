@@ -38,7 +38,7 @@ export const ContactsList = ({}: PropsWithChildren<IndexPropsType>) => {
                         <AnimationSection className={styles.item}>
                             <a
                                 href={
-                                    c.title === 'email'
+                                    c.title === 'gmail'
                                         ? `mailto:${c.link}`
                                         : c.link
                                 }
