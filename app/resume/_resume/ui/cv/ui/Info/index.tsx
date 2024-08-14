@@ -28,7 +28,7 @@ export const Info = () => {
                 />
             </View>
             <View>
-                {EXPERIENCES.map((e, index) => {
+                {EXPERIENCES.reverse().map((e, index) => {
                     return (
                         <View key={`experience.${e.companyName}.${index}`}>
                             <View style={styles.mainInfo}>

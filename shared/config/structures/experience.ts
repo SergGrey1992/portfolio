@@ -66,11 +66,11 @@ export const EXPERIENCES: Experience[] = [
         ],
     },
     {
-        companyName: 'Part time',
-        position: 'Software engineer (Front-end developer)',
+        companyName: 'CLIKK.STUDIO',
+        position: 'Team lead Front-end developer',
         workingTime: {
             start: 'sep - 2022',
-            end: 'may - 2024',
+            end: 'jul - 2024',
         },
         responsibilities: [
             'Implementation of new functionality in existing applications.',
