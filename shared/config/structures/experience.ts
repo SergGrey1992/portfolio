@@ -10,35 +10,18 @@ type Experience = {
 
 export const EXPERIENCES: Experience[] = [
     {
-        companyName: 'Freelance',
-        position: 'Markup developer',
+        companyName: 'CLIKK.STUDIO',
+        position: 'Team lead Front-end developer',
         workingTime: {
-            start: 'jun - 2019',
-            end: 'apr - 2020',
+            start: 'sep - 2022',
+            end: 'jul - 2024',
         },
         responsibilities: [
-            'Created web pages with a focus on semantic markup.',
-            'Ensured responsive design.',
-            'Guaranteed correct display of websites on all devices.',
-            'Paid attention to detail and code quality.',
-        ],
-    },
-    {
-        companyName: 'It-incubator',
-        position: 'Software engineer (Front-end & Mobile developer)',
-        workingTime: {
-            start: 'apr - 2020',
-            end: 'aug - 2023',
-        },
-        responsibilities: [
-            'User interfaces using React, connecting to the server via REST API.',
-            'Mobile applications using React Native.',
-            'Implemented best practices, optimization, and SEO (where necessary).',
-            'Used TypeScript to enforce strict typing in the project.',
-            'Wrote unit tests.',
-            'Used Jira for tracking and prioritizing tasks.',
-            'Developed responsive designs for optimal performance on all devices.',
-            'Integrated external APIs and libraries to extend application functionality.',
+            'Implementation of new functionality in existing applications.',
+            'Creation of a company website for Clikk.Studio.',
+            'Optimization and performance enhancement of existing features.',
+            'Integration of third-party services and APIs to extend application functionality.',
+            'Adaptation of designs for various devices and screens.',
         ],
     },
     {
@@ -66,18 +49,35 @@ export const EXPERIENCES: Experience[] = [
         ],
     },
     {
-        companyName: 'CLIKK.STUDIO',
-        position: 'Team lead Front-end developer',
+        companyName: 'It-incubator',
+        position: 'Software engineer (Front-end & Mobile developer)',
         workingTime: {
-            start: 'sep - 2022',
-            end: 'jul - 2024',
+            start: 'apr - 2020',
+            end: 'aug - 2023',
         },
         responsibilities: [
-            'Implementation of new functionality in existing applications.',
-            'Creation of a company website for Clikk.Studio.',
-            'Optimization and performance enhancement of existing features.',
-            'Integration of third-party services and APIs to extend application functionality.',
-            'Adaptation of designs for various devices and screens.',
+            'User interfaces using React, connecting to the server via REST API.',
+            'Mobile applications using React Native.',
+            'Implemented best practices, optimization, and SEO (where necessary).',
+            'Used TypeScript to enforce strict typing in the project.',
+            'Wrote unit tests.',
+            'Used Jira for tracking and prioritizing tasks.',
+            'Developed responsive designs for optimal performance on all devices.',
+            'Integrated external APIs and libraries to extend application functionality.',
+        ],
+    },
+    {
+        companyName: 'Freelance',
+        position: 'Markup developer',
+        workingTime: {
+            start: 'jun - 2019',
+            end: 'apr - 2020',
+        },
+        responsibilities: [
+            'Created web pages with a focus on semantic markup.',
+            'Ensured responsive design.',
+            'Guaranteed correct display of websites on all devices.',
+            'Paid attention to detail and code quality.',
         ],
     },
 ]

@@ -1,12 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from '@react-pdf/renderer'
 
-import {
-    Line,
-    ModeTitle,
-    SubTitle,
-    Title,
-} from '@/app/resume/_resume/ui/components'
+import { ModeTitle, SubTitle, Title } from '@/app/resume/_resume/ui/components'
 
 import { common } from '@/shared/config/structures/common'
 import { EXPERIENCES } from '@/shared/config/structures/experience'
@@ -28,7 +23,7 @@ export const Info = () => {
                 />
             </View>
             <View>
-                {EXPERIENCES.reverse().map((e, index) => {
+                {EXPERIENCES.map((e, index) => {
                     return (
                         <View key={`experience.${e.companyName}.${index}`}>
                             <View style={styles.mainInfo}>
